@@ -12,5 +12,10 @@ namespace P01_MvcConcept.Controllers
 
             return View(ps.GetProductAll());
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }   
