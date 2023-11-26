@@ -1,9 +1,18 @@
 
+using P01_MvcConcept.IService;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container.( การลงทะเบียน )
 builder.Services.AddControllersWithViews();
 
+//Dependency injection การฉีดการใส่ข้อมูล ( ลงทะเบียนแล้ว )
+builder.Services.AddSingleton<IProductService,ProductService>();
+
+
+
+
+// Midle ware ( เหมือนกับ ยาม ตรวจวอบค่าจ่าง ๆ )
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,3 +31,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+// Midle ware End

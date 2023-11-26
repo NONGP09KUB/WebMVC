@@ -2,17 +2,19 @@
 
 
 
-<a class="btn btn-outline-dark" asp-action="Create"> Create </a>
+<a class="btn btn-outline-dark" asp-action="Create" style="margin:0.5rem; " > หน้าถัดไป </a>
 <table class="table">
-    <thead>
+    <thead class="table table-dark table-striped" >
         <tr>
             <th scope="col">ID</th>
             <th scope="col">NAME</th>
             <th scope="col">PRICE</th>
             <th scope="col">AMOUNT</th>
+            <th scope="col"></th>
+            
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table table-dark table-striped" >
         @foreach(var product in Model)
         {
             <tr>
@@ -20,6 +22,13 @@
                 <td>@product.Name</td>
                 <td>@product.Price</td>
                 <td>@product.Amount</td>
+                <td>
+                    @* เขียนได้ 2 วิธี *@
+                    @* <a class="btn btn-danger" href="/Product/Delete/@product.Id"> Del </a> *@
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@product.Id"
+                    <a class="btn btn-danger" asp-action="Edit" asp-route-id="@product.Id"
+                    onclick="return confirm('ยืนยันการลบ!')"> ลบสินค้า </a>
+                </td>
             </tr>
         }
         

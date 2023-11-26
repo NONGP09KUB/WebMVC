@@ -1,8 +1,9 @@
 ﻿using System.Xml.Linq;
 using System;
-using P01_MvcConcept.Models.Setting;
+using P01_MvcConcept.Models;
+using P01_MvcConcept.Setting;
 
-namespace P01_MvcConcept.Models.IService
+namespace P01_MvcConcept.IService
 {
     public class ProductService : IProductService
     {
@@ -10,8 +11,8 @@ namespace P01_MvcConcept.Models.IService
         public ProductService()
         {
             ProductList = new List<Product>();
-            GenerateProduct(10);
-        } 
+            GenerateProduct(5);
+        }
 
         // สร้างสินค้า
         public void GenerateProduct(int number = 10)
@@ -26,8 +27,8 @@ namespace P01_MvcConcept.Models.IService
                     Name = NameOfProduct.ProductName[r.Next(NumberOgName)],
                     Price = r.NextDouble() * 100 + 1,
                     Amount = r.Next(100) + 1
-                }) ;
-                   
+                });
+
             }
         }
         // สร้างสินค้า end 
@@ -38,6 +39,22 @@ namespace P01_MvcConcept.Models.IService
         {
             return ProductList;
         }
-        // เรียกใช้ Product End 
+
+        public Product SearchProduct(int id)
+        {
+            return ProductList.Find(x => x.Id == id);  
+
+        }
+
+        public void AddProduct(Product product)
+        {
+            ProductList.Add(product);
+        }
+
+        public void DeleteProduct(int id)
+        {
+           var result = SearchProduct(id);
+            if (result != null) { ProductList.Remove(result); }
+        }
     }
 }
