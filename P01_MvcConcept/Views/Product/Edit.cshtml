@@ -1,0 +1,48 @@
+﻿@model Product
+@* ต้องเรียกใช้ model Product เพื่อให้ forรู้จัก *@
+
+<h1><p> Update Page นะจ๊ะ </p></h1>
+@* form หมายถึง กระดาษปล่าวมี่คนอื่นสามารถเอาไปใช้ได้  *@
+<div class="container col-md-6 ">
+    @* action กับ Method อันเดียวกัน *@
+    <form asp-action="Edit" >
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row col-md-5 align-items-center">
+            <label asp-for="Id" class="form-label"></label>
+            <input asp-for="Id" type="number" class="form-control" readonly>
+            <span asp-validation-for="Id" style="color: hsl(10, 10%, 50%);"></span>
+            @* เจอคำว่า for = model *@
+        </div>
+
+        <div class="row col-md-5 align-items-center">
+            <label asp-for=" Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="row col-md-5 align-items-center">
+            <label asp-for="Price" class="form-label"></label>
+            <input asp-for="Price" type="number" class="form-control">
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div class="row col-md-5 align-items-center">
+            <label asp-for="Amount" class="form-label"></label>
+            <input asp-for="Amount" type="number" class="form-control">
+            <span asp-validation-for="Amount" class="text-danger"></span>
+        </div>
+
+        <div class="row-8 col-5" style="margin:10px;">
+            <button  class="btn btn-outline-danger">Submit</button>
+            <a class="btn btn-outline-danger" asp-action="Index"> Back นะจ๊ะ </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

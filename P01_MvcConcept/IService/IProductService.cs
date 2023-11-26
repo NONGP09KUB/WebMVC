@@ -12,5 +12,7 @@ namespace P01_MvcConcept.IService
         void AddProduct(Product product);
 
         void DeleteProduct(int id);
+        void EditProduct(int id);
+        void UpdateProduct(Product product);
     }
 }

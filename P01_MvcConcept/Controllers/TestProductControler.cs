@@ -4,21 +4,23 @@ using P01_MvcConcept.Models;
 
 namespace P01_MvcConcept.Controllers
 {
-    public class ProductController : Controller
+    public class TestProductControler : Controller
     {
-        private readonly IProductService ps;
+        private IProductService ps;
 
-        // เรียกใช้ Dependency injection ผ่าน Contructor
-        public ProductController(IProductService ps)
+        public TestProductControler(IProductService ps)
         {
             this.ps = ps;
         }
-        
         public IActionResult Index()
         {
             return View(ps.GetProductAll());
         }
-
+        public IActionResult Delete(int id)
+        {
+            ps.DeleteProduct(id);
+            return RedirectToAction("Index");
+        }
         public IActionResult Create()
         {
             return View();
@@ -29,22 +31,15 @@ namespace P01_MvcConcept.Controllers
         [HttpPost]
         public IActionResult Create(Product product)
         {
-            if (!ModelState.IsValid) { return View();  }
+            if (!ModelState.IsValid) { return View(); }
 
             var result = ps.SearchProduct(product.Id);
-            if ( result == null)
+            if (result == null)
             {
                 ps.AddProduct(product);
             }
             return RedirectToAction("Index");
         }
-
-        public IActionResult  Delete(int id)
-        {
-            ps.DeleteProduct(id);
-            return RedirectToAction("Index");
-        }
-
         public IActionResult Edit(int id)
         {
             var resualt = ps.SearchProduct(id);
@@ -59,5 +54,6 @@ namespace P01_MvcConcept.Controllers
             else { ps.UpdateProduct(product); }
             return RedirectToAction("Index");
         }
+
     }
-}   
+}
