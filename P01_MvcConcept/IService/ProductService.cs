@@ -17,7 +17,7 @@ namespace P01_MvcConcept.IService
         // สร้างสินค้า
         public void GenerateProduct(int number = 10)
         {
-            for (int i = 1; i < number; i++)
+            for (int i = 1; i < number; i++)                        
             {
                 Random r = new Random();
                 var NumberOgName = NameOfProduct.ProductName.Count;
@@ -40,28 +40,34 @@ namespace P01_MvcConcept.IService
             return ProductList;
         }
 
+        // การค้นหาสินค้า
         public Product SearchProduct(int id)
         {
             return ProductList.Find(x => x.Id == id);  
 
         }
 
+        // การเพิ่มสินค้า
         public void AddProduct(Product product)
         {
             ProductList.Add(product);
         }
-
+        
+        // การลบสินค้า
         public void DeleteProduct(int id)
         {
            var result = SearchProduct(id);
             if (result != null) { ProductList.Remove(result); }
         }
 
+        // การแก้ไขสินค้า
         public void EditProduct(int id)
         {
             throw new NotImplementedException();
         }
 
+
+        // กาารอัพเดตสินค้า
         public void UpdateProduct(Product product)
         {
             var oldProduct = ProductList.Find(p =>p.Id==product.Id);
