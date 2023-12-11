@@ -3,21 +3,19 @@
     public class Test : ITest
     {
         public Data Data { get; set; }
+        public int Id { get;  set; }
 
         public Test()
         {
             Data = new();
             GenerateData();
         }
-
         public Data GenerateData()
         {
             // GetHashCode คือได้ตัวเลขมั่ว ๆ 
             Data.Id = GetHashCode();
             Data.Message = "Test";
-
             return Data;
-
         }
 
     }

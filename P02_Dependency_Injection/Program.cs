@@ -8,11 +8,11 @@ builder.Services.AddControllersWithViews();
 
 
 // การปั่ม ที่ได้เหมือนเดิมทุกครั้ง เช่น นักศึกษา 10 คน ทานอาหาร 1 จาน  | สร้าง object แบบที่ 1 
-//builder.Services.AddSingleton<ITest, Test>();
+builder.Services.AddSingleton<ITest, Test>();
 
 
 // การปั่ม  เช่น นักศึกษา 10 คน ทานอาหารเหมือนกัน 10 จาน
-//builder.Services.AddScoped<ITest, Test>();
+builder.Services.AddScoped<ITest, Test>();
 
 
 // แบบที่ 3 ไม่เหมือนกันเลยซักคนเดียว

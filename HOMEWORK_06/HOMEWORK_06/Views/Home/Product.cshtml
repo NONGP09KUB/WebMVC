@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "TravelTrip";
+}
+
+@model List<Product>
+<div class="container">
+    <div class="row">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var product in Model)
+            {
+                <div class="col-md-4" style="margin-top:30px;">
+                    <a href="#">
+                        <div class="w3-display-container">
+                            <div class="w3-display-topleft">HotHit</div>
+                            <img src="https://picsum.photos/1400/1400?random=@Guid.NewGuid().ToString()" alt="Food" class="img-fluid">
+                        </div>
+                    </a>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No products available.</p>
+        }
+    </div>
+</div>

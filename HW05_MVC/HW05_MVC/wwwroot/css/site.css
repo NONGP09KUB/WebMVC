@@ -1,0 +1,169 @@
+html {
+    font-size: 14px;
+    
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+
+}
+
+body {
+    margin-bottom: 60px;
+    
+}
+
+@keyframes rainbow {
+    0% {
+        color: #ff0000;
+    }
+
+    16.666% {
+        color: #ff8000;
+    }
+
+    33.333% {
+        color: #ffff00;
+    }
+
+    50% {
+        color: #80ff00;
+    }
+
+    66.666% {
+        color: #00ff80;
+    }
+
+    83.333% {
+        color: #00ffff;
+    }
+
+    100% {
+        color: #8000ff;
+    }
+}
+
+.navbar-brand h1 {
+    display: inline-block;
+    animation: rainbow 10s linear infinite;
+}
+
+
+.navbar-brand a {
+    color: white;
+}
+.TextTitle {
+    display: flex;
+    list-style: none;
+   justify-content:center;
+
+   
+}
+
+.TextTitle li {
+        margin-right: 1rem;
+        box-shadow: rgba(#000000) 50px 50px 50px 50px;
+ }
+
+TextTitle li a {
+    text-decoration: none;
+    color: aqua;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.TextTitle li a span {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    background-color: #F5AF40;
+    background-image: linear-gradient(to right top, #fdaa27, #fbab2c, #faac31, #f8ad36, #f7ae3a, #f7ae3a, #f6ad39, #f6ad39, #f7ab34, #f8aa2e, #f9a828, #faa622);
+    color: white;
+    margin-right:10px;
+    cursor: pointer;
+}
+.TextTitle li a span:hover{
+    color:black;
+
+}
+
+.Text-top {
+    padding-top:20px;
+    margin-top: 30px;
+
+}
+
+.d-flex button {
+    border-radius: 10px;
+}
+
+.d-flex input {
+    border-radius: 20px;
+}
+.Product {
+    display: flex;
+}
+
+
+/*ข้อความซ้อนภาพ*/
+.w3-display-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+.w3-display-topleft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.50);
+    color:whitesmoke;
+    font-size:20px;
+    padding: 5px;
+    margin: 0;
+    border-radius:5px;
+}
+/*ข้อความซ้อนภาพ End */
+.w3-display-container img {
+    width: 800px; 
+    height: 250px;
+    object-fit: cover; 
+}
+
+.colum {
+    color: white;
+    
+}
+.colum:hover{
+    color:black;
+}
+.w3-row {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.w3-col {
+    flex: 4;
+}
+
+.w3-padding-large {
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gasoek+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');

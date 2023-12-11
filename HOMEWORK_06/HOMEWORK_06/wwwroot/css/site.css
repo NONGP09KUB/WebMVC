@@ -1,0 +1,342 @@
+
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+}
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+
+
+
+.navbar-brand h1 {
+    display: inline-block;
+    animation: rainbow 10s linear infinite;
+}
+
+
+.navbar-brand a {
+    color: white;
+}
+
+.TextTitle {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+    .TextTitle li {
+        margin-right: 1rem;
+        box-shadow: rgba(#000000) 50px 50px 50px 50px;
+    }
+
+TextTitle li a {
+    text-decoration: none;
+    color: aqua;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.TextTitle li a span {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    background-color: #F5AF40;
+    background-image: linear-gradient(to right top, #fdaa27, #fbab2c, #faac31, #f8ad36, #f7ae3a, #f7ae3a, #f6ad39, #f6ad39, #f7ab34, #f8aa2e, #f9a828, #faa622);
+    color: white;
+    margin-right: 10px;
+    cursor: pointer;
+}
+@keyframes rainbow {
+    0% {
+        color: #ff0000;
+    }
+    16.666% {
+        color: #ff8000;
+    }
+    33.333% {
+        color: #ffff00;
+    }
+    50% {
+        color: #80ff00;
+    }
+    66.666% {
+        color: #00ff80;
+    }
+    83.333% {
+        color: #00ffff;
+    }
+    100% {
+        color: #8000ff;
+    }
+}
+.TextTitle li a span:hover {
+    color: black;
+}
+.TextTitle li:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.Text-top {
+    padding-top: 20px;
+    margin-top: 30px;
+}
+
+.d-flex button {
+    border-radius: 10px;
+}
+
+.d-flex input {
+    border-radius: 20px;
+}
+
+.Product {
+    display: flex;
+}
+
+
+/*ข้อความซ้อนภาพ*/
+.w3-display-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.w3-display-topleft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.50);
+    color: whitesmoke;
+    font-size: 20px;
+    padding: 5px;
+    margin: 0;
+    border-radius: 5px;
+}
+/*ข้อความซ้อนภาพ End */
+.w3-display-container img {
+    width: 800px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.colum {
+    color: white;
+}
+
+    .colum:hover {
+        color: black;
+    }
+
+.w3-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.w3-col {
+    flex: 4;
+}
+
+.w3-padding-large {
+    box-sizing: border-box;
+}
+
+
+.site-footer {
+    background-color: #26272b;
+    padding: 45px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #737373;
+}
+
+    .site-footer hr {
+        border-top-color: #bbb;
+        opacity: 0.5
+    }
+
+        .site-footer hr.small {
+            margin: 20px 0
+        }
+
+    .site-footer h6 {
+        color: #fff;
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-top: 5px;
+        letter-spacing: 2px
+    }
+
+    .site-footer a {
+        color: #737373;
+    }
+
+        .site-footer a:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+.footer-links {
+    padding-left: 0;
+    list-style: none
+}
+
+    .footer-links li {
+        display: block
+    }
+
+    .footer-links a {
+        color: #737373
+    }
+
+        .footer-links a:active, .footer-links a:focus, .footer-links a:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+    .footer-links.inline li {
+        display: inline-block
+    }
+
+.site-footer .social-icons {
+    text-align: right
+}
+
+    .site-footer .social-icons a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin-left: 6px;
+        margin-right: 0;
+        border-radius: 100%;
+        background-color: #33353d
+    }
+
+.copyright-text {
+    margin: 0
+}
+
+@media (max-width:991px) {
+    .site-footer [class^=col-] {
+        margin-bottom: 30px
+    }
+}
+
+@media (max-width:767px) {
+    .site-footer {
+        padding-bottom: 0
+    }
+
+        .site-footer .copyright-text, .site-footer .social-icons {
+            text-align: center
+        }
+}
+
+.social-icons {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none
+}
+
+    .social-icons li {
+        display: inline-block;
+        margin-bottom: 4px
+    }
+
+        .social-icons li.title {
+            margin-right: 15px;
+            text-transform: uppercase;
+            color: #96a2b2;
+            font-weight: 700;
+            font-size: 13px
+        }
+
+    .social-icons a {
+        background-color: #eceeef;
+        color: #818a91;
+        font-size: 16px;
+        display: inline-block;
+        line-height: 44px;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        margin-right: 8px;
+        border-radius: 100%;
+        -webkit-transition: all .2s linear;
+        -o-transition: all .2s linear;
+        transition: all .2s linear
+    }
+
+        .social-icons a:active, .social-icons a:focus, .social-icons a:hover {
+            color: #fff;
+            background-color: #29aafe
+        }
+
+    .social-icons.size-sm a {
+        line-height: 34px;
+        height: 34px;
+        width: 34px;
+        font-size: 14px
+    }
+
+    .social-icons a.facebook:hover {
+        background-color: #3b5998
+    }
+
+    .social-icons a.twitter:hover {
+        background-color: #00aced
+    }
+
+    .social-icons a.linkedin:hover {
+        background-color: #007bb6
+    }
+
+    .social-icons a.dribbble:hover {
+        background-color: #ea4c89
+    }
+
+@media (max-width:767px) {
+    .social-icons li.title {
+        display: block;
+        margin-right: 0;
+        font-weight: 600
+    }
+}
+.html, body {
+    margin: 0;
+    background-color: #F1F1F1;
+}
+.body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Karma", sans-serif
+}
+
+.w3-bar-block .w3-bar-item {
+    padding: 20px
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gasoek+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
