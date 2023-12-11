@@ -3,11 +3,12 @@
 namespace P03_CodeFirst.Data
 {
     // การสืบทอด ขาก framework ที่ติดตั้งมา 
-    public class DataContext : DbContext
+    public class DataContext : DbContext    
     {
         // ในวงเล็บคือ พารามิเตอร์ ที่ชื่อว่า options => ใช้ชื่ออะไรก็ได้
         public DataContext(DbContextOptions options) : base(options)
         {
+
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -15,7 +16,7 @@ namespace P03_CodeFirst.Data
             // UseSqlServer มาจากตัวที่ติดตั้ง 
             // ("Server=DESKTOP-3268S1F\\SQLEXPRESS"); ใส่แบบนิใช้ได้แค่เครื่องที่สร้าง
             // Trusted_Connection=True; TrustServerCertificate=True" อันนิ ต้องใส่ให้ถูกเท่านั้น เป๊ะ
-            optionsBuilder.UseSqlServer(" Server=.\\SQLEXPRESS; Database=samonglai; Trusted_Connection=True; TrustServerCertificate=True ");
+            optionsBuilder.UseSqlServer(" Server=.\\SQLEXPRESS; Database=SamongLai; Trusted_Connection=True; TrustServerCertificate=True ");
             //optionsBuilder.UseSqlite("Data source=Test99");
         }
 

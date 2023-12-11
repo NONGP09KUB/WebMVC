@@ -1,4 +1,5 @@
 using P03_CodeFirst.Data;
+using P03_CodeFirst.SERVICE;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,8 @@ builder.Services.AddControllersWithViews();
 
 // การฉีดข้อมูลให้ใช้ได้ทุกหน้า ( DataContext เอามาจากหน้าที่สร้าง Class )    DataContext.cs <=
 builder.Services.AddDbContext<DataContext>();
+
+builder.Services.AddScoped<IProductService, ProductService>();
 
 
 
