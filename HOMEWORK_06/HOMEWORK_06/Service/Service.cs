@@ -1,5 +1,7 @@
 ﻿using HOMEWORK_06.Models;
 using HOMEWORK_06.Setting;
+using Microsoft.AspNetCore.Http.HttpResults;
+using System;
 
 namespace HOMEWORK_06.Service
 {
@@ -9,9 +11,10 @@ namespace HOMEWORK_06.Service
         public Service()
         {
             ProductList = new List<Product>();
-            GenerateProduct(5);
+            GenerateProduct(4);
         }
 
+      
         // รับ สินค้า
         public void AddProduct(Product product)
         {
@@ -21,7 +24,7 @@ namespace HOMEWORK_06.Service
 
 
         // เก็บสินค้าทั้งหมด
-        public List<Product> GetProductAll(int number = 5)
+        public List<Product> GetProductAll()
         {
             return ProductList;
         }
@@ -29,24 +32,26 @@ namespace HOMEWORK_06.Service
 
 
         // สร้างสินค้า
-        public List<Product> GenerateProduct(int number = 5)
+        public List<Product> GenerateProduct(int number )
         {
-            var Product = NameProduct.nameProduct.Count;
-
-            for (int i = 0; i <= number; i++)
+            var productCount = NameProduct.nameProduct.Count;
+            for (int i = 0; i < number; i++)
             {
                 Random r = new Random();
-                
                 ProductList.Add(new Product
                 {
                     Id = i,
-                    Name = NameProduct.nameProduct[r.Next(Product)],
+                    Name = NameProduct.nameProduct[i],
                     Price = r.Next(1, 50),
                     Amount = r.Next(1, 50),
+                    ImageUrl = $"https://picsum.photos/110/50?{r.Next(1, 9999)}"
                 });
             }
+
+          
             return ProductList;
         }
+
         // =======================================================================================
 
         // แก้ไขสินค้า
@@ -59,9 +64,14 @@ namespace HOMEWORK_06.Service
         // ลบสินค้าที่เลือก
         public void DeleteProduct(int id)
         {
-            var result = SearchProduct(id);
-            if (result != null) { ProductList.Remove(result); }
+            var productIndex = ProductList.FindIndex(p => p.Id == id);
+            if (productIndex >= 0)
+            {
+                ProductList.RemoveAt(productIndex);
+            }
+            
         }
+
         // =======================================================================================
 
         //  ค้นหาสินค้าทั้งหมด
@@ -85,6 +95,6 @@ namespace HOMEWORK_06.Service
 
         }
 
-   
+
     }
 }

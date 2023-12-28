@@ -9,5 +9,7 @@
 
         void Delete(Product product);
 
+        void Add(Product product);
+        void Update(Product product);
     }
 }

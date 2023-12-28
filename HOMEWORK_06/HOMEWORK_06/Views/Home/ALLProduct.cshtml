@@ -7,8 +7,9 @@
         <tr>
             <th>รหัสสินค้า</th>
             <th>ชื่อสินค้า</th>
-            <th>รายละเอียด</th>
-            <th>ราคา</th>
+            <th>จำนวนสินค้า</th>
+            <th>รูปภาพ</th>
+            <th>แก้ไข/ลบ </th>
         </tr>
     </thead>
     <tbody>
@@ -19,14 +20,15 @@
                 <td>@product.Name</td>
                 <td>@product.Price</td>
                 <td>
+                    <img src="@product.ImageUrl" />
+                </td>
+                    
+                <td>
                     @* เขียนได้ 2 วิธี *@
-                    <a class="btn btn-danger" href="/Product/Delete/@product.Id"> Del </a>
-                    @* asp-route-id ไอดี ตัวนี้ต้องตรงกับ controller *@
                     <a class="btn btn-danger" asp-action="Edit" asp-route-id="@product.Id" onclick="return confirm('แก้ไข!')">แก้ไข</a>
-                    @* <a class="btn btn-danger" asp-action="Delete" asp-route-id="@product.Id" onclick="return confirm('ยืนยันการลบ!')"> ลบสินค้า </a> *@
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@product.Id" onclick="return confirm('ยืนยันการลบ!')"> ลบสินค้า </a>
                 </td>
             </tr>
-
         }
     </tbody>
 </table>    

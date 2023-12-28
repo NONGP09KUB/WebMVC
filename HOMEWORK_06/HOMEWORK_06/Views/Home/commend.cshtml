@@ -4,6 +4,8 @@
 @model List<Product>
 
 <div class="container">
+    <center> <a class="btn btn-success" asp-action="Create" onclick="return confirm('ยืนยัน!')"> Add </a></center>
+    
     <div class="row">
         @if (Model != null && Model.Any())
         {
@@ -13,7 +15,9 @@
                     <a href="#">
                         <div class="w3-display-container">
                             <div class="w3-display-topleft">HotHit</div>
-                            <img src="https://picsum.photos/seed/@Guid.NewGuid().ToString()/1480/1400/?blur=2" alt="Product Image" class="img-fluid">
+                            
+                            <img src="https://picsum.photos/seed/@Guid.NewGuid().ToString()/1480/1400/?blur=2"  class="img-fluid">
+                            
                         </div>
                     </a>
                 </div>

@@ -1,0 +1,27 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "แก้ไข";
+}
+
+<h1 class="text-center"> แก้ไขข้อมูล </h1>
+<hr />
+
+<form method="POST" asp-controller="Product" asp-action="Edits">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Score"></label>
+        <input type="number" asp-for="Score" class="form-control" />
+        <span asp-validation-for="Score" class="text-danger"></span>
+    </div>
+    <center><button type="summit" class="btn-outline-danger m-2"> อัพข้อมูล </button></center>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

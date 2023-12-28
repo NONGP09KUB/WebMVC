@@ -4,8 +4,8 @@ namespace HOMEWORK_06.Service
 {
     public interface IService
     {
-        List<Product> GenerateProduct(int number = 5);
-        List<Product> GetProductAll(int number = 5);
+        List<Product> GenerateProduct(int number );
+        List<Product> GetProductAll();
 
         Product SearchProduct(int id);
 

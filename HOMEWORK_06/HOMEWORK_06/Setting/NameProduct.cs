@@ -4,8 +4,8 @@
     {
         public static List<string> nameProduct = new List<string>()
         {             
-            "Product","Product1","Product2","Product3"  
-        
+            "Param_1","Param_2","Param_3","Param_4"
+
         };
     }
 
